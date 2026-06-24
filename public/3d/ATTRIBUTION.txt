@@ -1,0 +1,9 @@
+3D artwork in this folder is from Microsoft Fluent Emoji.
+Source: https://github.com/microsoft/fluentui-emoji
+License: MIT (free for commercial use).
+
+Files were downloaded from the project's published assets and renamed for
+convenience (e.g. ringed_planet -> planet.png, sauropod -> dino.png,
+t-rex -> trex.png, test_tube -> flask.png, paw_prints -> footprint.png,
+atom_symbol -> atom.png, light_bulb -> bulb.png, flying_saucer -> ufo.png,
+crescent_moon -> moon.png, glowing_star -> sparkles.png).
