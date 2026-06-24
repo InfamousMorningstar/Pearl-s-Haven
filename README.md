@@ -96,8 +96,8 @@ vercel --prod # production
 
 ## 📬 Contact
 
-**Pearl's Haven Dayhome** · 150 Costa Mesa Close NE
-📧 pearlshaven@gmail.com · ☎️ 587-917-0079 · 💬 Text 587-917-8201
+**Pearl's Haven Dayhome** · 
+📧 pearlshaven@gmail.com ·
 Hours: Mon–Fri, 7:00am – 6:00pm · Fully licensed · Government grant & subsidy available
 
 ---
