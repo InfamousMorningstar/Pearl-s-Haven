@@ -5,25 +5,25 @@ import { Reveal, Stagger, StaggerItem } from "./motion";
 
 const REASONS = [
   {
-    icon: "sun" as const,
-    anim: "animate-spin-slow",
+    icon: "heart" as const,
+    anim: "animate-jelly",
     title: "Loved like family",
     body: "A tiny group means every child gets cuddles, patience, and a grown-up who truly knows them.",
   },
   {
-    icon: "bulb" as const,
+    icon: "teddy" as const,
     anim: "animate-swing",
     title: "Learning through play",
     body: "Paint, blocks, stories, and backyard mud pies — big lessons hiding inside every giggle.",
   },
   {
-    icon: "egg" as const,
-    anim: "animate-jelly",
+    icon: "house" as const,
+    anim: "animate-bob",
     title: "Safe & cozy home",
     body: "A child-proofed, sunny space with nap nooks, fenced play yard, and zero screens.",
   },
   {
-    icon: "flask" as const,
+    icon: "cooking" as const,
     anim: "animate-hop",
     title: "Yummy home cooking",
     body: "Fresh, allergy-friendly snacks and lunches made from scratch in our own kitchen.",
@@ -42,7 +42,7 @@ export default function About() {
             <Reveal className="relative">
               <div className="relative rounded-[40px] border-4 border-cream-deep bg-cream p-8 shadow-[0_20px_40px_-20px_rgba(58,52,80,0.4)]">
                 <div className="flex items-center gap-4">
-                  <Clay3D name="sun" size={84} title="Miss Uzma" className="animate-spin-slow" />
+                  <Clay3D name="wave" size={84} title="Miss Uzma" className="animate-wobble" />
                   <div>
                     <p className="font-display text-2xl text-ink">Hi, I&apos;m Miss Uzma!</p>
                     <p className="text-lg text-ink-soft">Your dayhome caregiver</p>

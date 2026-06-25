@@ -50,7 +50,7 @@ export default function DailyDay() {
   return (
     <section
       id="day"
-      className="relative overflow-hidden bg-[linear-gradient(180deg,#FFE0C2_0%,#FFE59E_16%,#FFC93C_44%,#FFB85C_72%,#FF9E5C_100%)] px-4 pb-24 pt-12"
+      className="relative overflow-hidden bg-[linear-gradient(180deg,#FFE0C2_0%,#FFE7A6_13%,#FFC93C_32%,#FFB559_50%,#FF9D5C_68%,#FF8470_83%,#E98AA8_93%,#B79AE0_100%)] px-4 pb-24 pt-12"
     >
       <DaySky />
       <Reveal className="relative z-10 mx-auto max-w-3xl text-center">

@@ -33,7 +33,12 @@ export type Clay3DName =
   | "phone"
   | "chat"
   | "hero-man"
-  | "hero-woman";
+  | "hero-woman"
+  | "wave"
+  | "heart"
+  | "teddy"
+  | "house"
+  | "cooking";
 
 type Clay3DProps = {
   name: Clay3DName;
