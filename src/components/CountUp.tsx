@@ -19,13 +19,10 @@ export default function CountUp({
   const inView = useInView(ref, { once: true, amount: 0.6 });
   const reduce = useReducedMotion();
   const [val, setVal] = useState(0);
+  const displayVal = reduce && inView ? to : val;
 
   useEffect(() => {
-    if (!inView) return;
-    if (reduce) {
-      setVal(to);
-      return;
-    }
+    if (!inView || reduce) return;
     let raf = 0;
     const start = performance.now();
     const tick = (t: number) => {
@@ -40,7 +37,7 @@ export default function CountUp({
 
   return (
     <span ref={ref} className={className}>
-      {val}
+      {displayVal}
       {suffix}
     </span>
   );

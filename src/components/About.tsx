@@ -40,9 +40,6 @@ export default function About() {
           <div className="grid items-center gap-12 lg:grid-cols-[0.9fr_1.1fr]">
             {/* Caregiver intro card */}
             <Reveal className="relative">
-              <div className="absolute -left-6 -top-6 z-0">
-                <Clay3D name="atom" size={120} className="animate-spin-slow" />
-              </div>
               <div className="relative rounded-[40px] border-4 border-cream-deep bg-cream p-8 shadow-[0_20px_40px_-20px_rgba(58,52,80,0.4)]">
                 <div className="flex items-center gap-4">
                   <Clay3D name="sun" size={84} title="Miss Uzma" className="animate-spin-slow" />

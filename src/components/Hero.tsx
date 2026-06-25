@@ -49,14 +49,6 @@ export default function Hero() {
       >
         <Clay3D name="star" size={48} className="animate-twinkle" />
       </Parallax>
-      <Parallax
-        speed={150}
-        spin={-30}
-        className="pointer-events-none absolute right-[40%] top-[58%] hidden sm:block"
-      >
-        <Clay3D name="egg" size={56} className="animate-jelly" />
-      </Parallax>
-
       {/* superhero pals — kids love a caped friend */}
       <Parallax
         speed={-100}
