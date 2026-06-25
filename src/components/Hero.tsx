@@ -57,6 +57,22 @@ export default function Hero() {
         <Clay3D name="egg" size={56} className="animate-jelly" />
       </Parallax>
 
+      {/* superhero pals — kids love a caped friend */}
+      <Parallax
+        speed={-100}
+        spin={14}
+        className="pointer-events-none absolute left-[4%] top-[40%] hidden lg:block"
+      >
+        <Clay3D name="hero-woman" size={100} className="animate-bob" />
+      </Parallax>
+      <Parallax
+        speed={130}
+        spin={-16}
+        className="pointer-events-none absolute right-[4%] top-[42%] hidden lg:block"
+      >
+        <Clay3D name="hero-man" size={104} className="animate-hop" />
+      </Parallax>
+
       {/* mobile-only floaters so small screens still feel alive */}
       <Parallax
         speed={120}
@@ -71,6 +87,13 @@ export default function Hero() {
         className="pointer-events-none absolute left-3 top-28 sm:hidden"
       >
         <Clay3D name="planet" size={58} className="animate-hop" />
+      </Parallax>
+      <Parallax
+        speed={70}
+        spin={16}
+        className="pointer-events-none absolute left-2 top-[54%] sm:hidden"
+      >
+        <Clay3D name="hero-woman" size={62} className="animate-bob" />
       </Parallax>
 
       <div className="relative z-10 mx-auto max-w-4xl text-center">

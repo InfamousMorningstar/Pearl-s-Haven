@@ -45,19 +45,39 @@ export default function About() {
               </div>
               <div className="relative rounded-[40px] border-4 border-cream-deep bg-cream p-8 shadow-[0_20px_40px_-20px_rgba(58,52,80,0.4)]">
                 <div className="flex items-center gap-4">
-                  <Clay3D name="sun" size={84} title="Miss Pearl" className="animate-spin-slow" />
+                  <Clay3D name="sun" size={84} title="Miss Uzma" className="animate-spin-slow" />
                   <div>
-                    <p className="font-display text-2xl text-ink">Hi, I&apos;m Miss Pearl!</p>
+                    <p className="font-display text-2xl text-ink">Hi, I&apos;m Miss Uzma!</p>
                     <p className="text-lg text-ink-soft">Your dayhome caregiver</p>
                   </div>
                 </div>
-                <p className="mt-5 text-lg leading-relaxed text-ink-soft">
-                  &ldquo;With over eight joyful years in childcare, I welcome little
-                  ones into my home like family. We sing in the mornings, build
-                  forts after lunch, and end each day with a story and a sleepy
-                  snuggle. Your child won&apos;t just be watched here — they&apos;ll
-                  be cherished.&rdquo;
-                </p>
+                <div className="mt-5 space-y-4 text-lg leading-relaxed text-ink-soft">
+                  <p>
+                    With over 8 years of experience in Early Childhood Education, I have
+                    dedicated my career to supporting children through their most meaningful
+                    years of growth and development. My passion for working with young
+                    children is what inspired me to open my own dayhome — a place where
+                    little ones feel safe, loved, and excited to learn every single day.
+                  </p>
+                  <p>
+                    I welcome children from 1 to 5 years old into a warm, home-like
+                    environment where every child is treated as an individual. I believe
+                    that the early years are the most important, and I am committed to
+                    providing thoughtful, play-based care that nurtures each child&apos;s
+                    curiosity, confidence, and social skills.
+                  </p>
+                  <p>
+                    As a parent yourself, you want nothing but the best for your little one
+                    — and so do I. My dayhome is built on trust, open communication, and
+                    genuine care for every family I work with. I take the time to get to
+                    know each child and build a relationship with their family, because when
+                    children feel secure, they truly flourish.
+                  </p>
+                  <p>
+                    I would love to welcome your family into mine. Feel free to reach out —
+                    I can&apos;t wait to meet you!
+                  </p>
+                </div>
                 <div className="mt-6 flex flex-wrap gap-2">
                   {["ECE Level 3", "8+ Years Experience", "Fully Licensed"].map(
                     (b) => (

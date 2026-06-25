@@ -1,22 +1,59 @@
 import Clay3D from "./Clay3D";
 import Wave from "./Wave";
+import { DaySky } from "./Scene";
 import { Reveal, Stagger, StaggerItem } from "./motion";
 
 const DAY = [
-  { time: "7:00", title: "Hellos & free play", icon: "sun" as const, anim: "animate-spin-slow", note: "Soft landings and big morning hugs." },
-  { time: "9:00", title: "Snack & circle time", icon: "star" as const, anim: "animate-twinkle", note: "Songs, calendar, and the weather dance." },
-  { time: "9:45", title: "Learning play", icon: "atom" as const, anim: "animate-spin-slow", note: "Letters, numbers, building, and stories." },
-  { time: "11:00", title: "Outdoor adventures", icon: "footprint" as const, anim: "animate-hop", note: "Backyard, garden digging, and bubbles." },
-  { time: "12:00", title: "Home-cooked lunch", icon: "flask" as const, anim: "animate-jelly", note: "Fresh, allergy-friendly, made with love." },
-  { time: "1:00", title: "Cozy nap time", icon: "moon" as const, anim: "animate-swing", note: "Quiet music and a sleepy story." },
-  { time: "3:00", title: "Art & messy fun", icon: "volcano" as const, anim: "animate-bob", note: "Paint, playdough, and proud creations." },
-  { time: "4:30", title: "Wind-down & pickups", icon: "rocket" as const, anim: "animate-hop", note: "Tidy-up song and goodbye waves." },
+  {
+    time: "7:00 – 8:30",
+    title: "Soft morning start",
+    icon: "sun" as const,
+    anim: "animate-spin-slow",
+    blurb: "Warm hellos, calm music, and a gentle settle-in to their second home.",
+    perks: ["Free play & puzzles", "A cozy book", "Breakfast together"],
+  },
+  {
+    time: "9:00 – 11:10",
+    title: "Learning & adventures",
+    icon: "star" as const,
+    anim: "animate-twinkle",
+    blurb: "Our busiest, brightest stretch — circle time, creating, and fresh air.",
+    perks: ["Circle time", "Arts & crafts", "Outdoor play & walks"],
+  },
+  {
+    time: "11:30 – 2:30",
+    title: "Lunch & cozy nap",
+    icon: "moon" as const,
+    anim: "animate-swing",
+    blurb: "A home-style meal together, then quiet rest for every little one.",
+    perks: ["Wash up", "Lunch together", "Nap & quiet time"],
+  },
+  {
+    time: "2:30 – 5:00",
+    title: "Afternoon fun",
+    icon: "volcano" as const,
+    anim: "animate-bob",
+    blurb: "Snack, stories, and lots of hands-on play with caregivers in the mix.",
+    perks: ["Wake-up snack", "Afternoon circle", "Yard & free play"],
+  },
+  {
+    time: "5:00 – 6:00",
+    title: "Wind-down & home-time",
+    icon: "rocket" as const,
+    anim: "animate-hop",
+    blurb: "Calm activities and gentle goodbyes as families arrive.",
+    perks: ["Quiet play", "Goodbye hugs", "Closes at 6:00"],
+  },
 ];
 
 export default function DailyDay() {
   return (
-    <section id="day" className="bg-sunny px-4 pb-24 pt-12">
-      <Reveal className="mx-auto max-w-3xl text-center">
+    <section
+      id="day"
+      className="relative overflow-hidden bg-[linear-gradient(180deg,#FFE0C2_0%,#FFE59E_16%,#FFC93C_44%,#FFB85C_72%,#FF9E5C_100%)] px-4 pb-24 pt-12"
+    >
+      <DaySky />
+      <Reveal className="relative z-10 mx-auto max-w-3xl text-center">
         <span className="font-display text-lg text-[#8a5a00]">Our sticker-chart day</span>
         <h2 className="mt-2 text-4xl text-ink sm:text-5xl">
           From morning hugs to goodbye waves
@@ -27,7 +64,7 @@ export default function DailyDay() {
         </p>
       </Reveal>
 
-      <Stagger as="ol" className="mx-auto mt-14 max-w-2xl">
+      <Stagger as="ol" className="relative z-10 mx-auto mt-14 max-w-2xl">
         {DAY.map((item, i) => (
           <StaggerItem
             as="li"
@@ -47,11 +84,19 @@ export default function DailyDay() {
               <Clay3D name={item.icon} size={56} className={item.anim} />
             </span>
             <div className="squish rounded-[26px] border-4 border-white bg-cream px-6 py-5 text-left shadow-[0_12px_24px_-14px_rgba(58,52,80,0.5)]">
-              <div className="flex items-baseline gap-3">
-                <span className="font-display text-2xl text-coral">{item.time}</span>
-                <h3 className="text-2xl text-ink">{item.title}</h3>
+              <span className="font-display text-lg text-coral">{item.time}</span>
+              <h3 className="text-2xl text-ink">{item.title}</h3>
+              <p className="mt-1.5 text-lg text-ink-soft">{item.blurb}</p>
+              <div className="mt-3.5 flex flex-wrap gap-2">
+                {item.perks.map((p) => (
+                  <span
+                    key={p}
+                    className="rounded-full border border-cream-deep bg-white px-3 py-1 text-base font-bold text-ink-soft"
+                  >
+                    {p}
+                  </span>
+                ))}
               </div>
-              <p className="mt-1 text-lg text-ink-soft">{item.note}</p>
             </div>
           </StaggerItem>
         ))}

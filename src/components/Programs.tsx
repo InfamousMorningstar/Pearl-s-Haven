@@ -10,6 +10,8 @@ const GROUPS = [
     name: "Tiny Sprouts",
     age: "12–18 months",
     tint: "bg-sky/15",
+    chip: "bg-sky/15 text-sky",
+    blurb: "Our littlest ones, wrapped in cuddles and calm.",
     perks: ["Gentle routines", "Sensory play", "Lots of cuddles", "Tummy-time fun"],
   },
   {
@@ -18,7 +20,8 @@ const GROUPS = [
     name: "Busy Bees",
     age: "18 months – 3 yrs",
     tint: "bg-coral/15",
-    featured: true,
+    chip: "bg-coral/15 text-coral",
+    blurb: "Wobbly walkers blooming into curious explorers.",
     perks: ["Potty-training help", "Music & movement", "Messy art", "First friendships"],
   },
   {
@@ -27,6 +30,8 @@ const GROUPS = [
     name: "Big Kids",
     age: "3–5 years",
     tint: "bg-grape/15",
+    chip: "bg-grape/15 text-grape",
+    blurb: "Confident kiddos getting all set for school.",
     perks: ["Pre-K basics", "Show & tell", "Garden science", "Kindergarten prep"],
   },
 ];
@@ -54,45 +59,43 @@ export default function Programs() {
               index={i}
               gap={0.13}
               interactive
-              className={`relative flex flex-col rounded-[36px] border-4 bg-white p-7 shadow-[0_18px_36px_-20px_rgba(58,52,80,0.4)] ${
-                g.featured ? "border-coral md:-mt-4 md:mb-4" : "border-cream-deep"
-              }`}
+              className="flex h-full flex-col items-center rounded-[36px] border-4 border-cream-deep bg-white p-7 text-center shadow-[0_18px_36px_-20px_rgba(58,52,80,0.4)]"
             >
-              {g.featured && (
-                <span className="absolute -top-4 left-1/2 -translate-x-1/2 rounded-full bg-coral px-4 py-1.5 text-base font-extrabold text-white shadow-md">
-                  Most popular
-                </span>
-              )}
               <div
-                className={`mx-auto flex h-28 w-28 items-center justify-center rounded-[28px] ${g.tint}`}
+                className={`flex h-28 w-28 items-center justify-center rounded-[28px] ${g.tint}`}
               >
                 <Clay3D name={g.icon} size={88} className={g.anim} />
               </div>
-              <h3 className="mt-5 text-center text-3xl text-ink">{g.name}</h3>
-              <p className="text-center text-lg font-bold text-ink-soft">{g.age}</p>
-              <ul className="mt-5 space-y-2.5">
+              <h3 className="mt-5 text-3xl text-ink">{g.name}</h3>
+              <p className="text-lg font-bold text-ink-soft">{g.age}</p>
+              <p className="mt-3 text-lg leading-relaxed text-ink-soft">{g.blurb}</p>
+              <div className="mt-5 flex flex-wrap justify-center gap-2">
                 {g.perks.map((p) => (
-                  <li key={p} className="flex items-center gap-3 text-lg text-ink">
-                    <span className="flex h-6 w-6 flex-none items-center justify-center rounded-full bg-mint text-sm text-white">
-                      ✓
-                    </span>
+                  <span
+                    key={p}
+                    className={`rounded-full px-3.5 py-1.5 text-base font-bold ${g.chip}`}
+                  >
                     {p}
-                  </li>
+                  </span>
                 ))}
-              </ul>
-              <a
-                href="#enroll"
-                className={`squish mt-7 block rounded-full px-5 py-3 text-center text-lg font-extrabold ${
-                  g.featured
-                    ? "bg-coral text-white shadow-[0_8px_0_0_#D8424B]"
-                    : "border-4 border-ink text-ink"
-                }`}
-              >
-                Ask about spots
-              </a>
+              </div>
             </StaggerItem>
           ))}
         </Stagger>
+
+        {/* one warm, shared call to action — not a price-tier button per card */}
+        <Reveal className="mt-12 flex flex-col items-center gap-4 text-center">
+          <p className="max-w-lg text-xl text-ink-soft">
+            Not sure which group fits?{" "}
+            <span className="font-bold text-ink">We&apos;ll help you find the perfect spot.</span>
+          </p>
+          <a
+            href="#enroll"
+            className="squish cta-attention rounded-full bg-coral px-9 py-4 text-xl font-extrabold text-white shadow-[0_10px_0_0_#D8424B]"
+          >
+            Ask about spots
+          </a>
+        </Reveal>
       </div>
       <Wave fill="#FFC93C" className="mt-20" />
     </section>

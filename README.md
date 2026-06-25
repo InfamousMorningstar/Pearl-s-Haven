@@ -93,6 +93,7 @@ vercel --prod # production
 
 - 3D artwork: [Microsoft Fluent Emoji](https://github.com/microsoft/fluentui-emoji) (MIT License) — see [`public/3d/ATTRIBUTION.txt`](public/3d/ATTRIBUTION.txt).
 - Fonts: [Baloo 2](https://fonts.google.com/specimen/Baloo+2) & [Nunito](https://fonts.google.com/specimen/Nunito) via Google Fonts.
+- Development: built by Salman Ahmad, with [Claude AI](https://claude.ai) (Anthropic) helping debug and refine the build here and there.
 
 ## 📬 Contact
 

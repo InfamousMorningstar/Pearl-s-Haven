@@ -6,4 +6,10 @@ Files were downloaded from the project's published assets and renamed for
 convenience (e.g. ringed_planet -> planet.png, sauropod -> dino.png,
 t-rex -> trex.png, test_tube -> flask.png, paw_prints -> footprint.png,
 atom_symbol -> atom.png, light_bulb -> bulb.png, flying_saucer -> ufo.png,
-crescent_moon -> moon.png, glowing_star -> sparkles.png).
+crescent_moon -> moon.png, glowing_star -> sparkles.png,
+alarm_clock -> clock.png, round_pushpin -> pin.png, envelope -> envelope.png,
+telephone_receiver -> phone.png, speech_balloon -> chat.png,
+man_superhero -> hero-man.png, woman_superhero -> hero-woman.png).
+
+Note: these are Fluent Emoji's generic superhero characters — they are NOT
+any trademarked comic-book character.

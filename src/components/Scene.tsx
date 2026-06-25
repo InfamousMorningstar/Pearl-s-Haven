@@ -42,6 +42,89 @@ export function Starfield({ className = "" }: { className?: string }) {
   );
 }
 
+/** Deterministic daytime sky: rising sun, noon rays, drifting clouds, a morning flock. */
+const CLOUDS: {
+  top: string;
+  left: string;
+  scale: number;
+  dur: number;
+  delay: number;
+  op: number;
+  bg?: string;
+}[] = [
+  { top: "9%", left: "13%", scale: 0.9, dur: 12, delay: 0, op: 0.9 },
+  { top: "31%", left: "70%", scale: 1.25, dur: 15, delay: 1.5, op: 0.82 },
+  { top: "56%", left: "9%", scale: 1.05, dur: 13, delay: 0.8, op: 0.72 },
+  { top: "80%", left: "63%", scale: 1.15, dur: 17, delay: 2, op: 0.6, bg: "#fff0d6" },
+];
+
+const BIRDS: { top: string; left: string; s: number; dur: number; delay: number }[] = [
+  { top: "14%", left: "31%", s: 24, dur: 7, delay: 0 },
+  { top: "10%", left: "41%", s: 17, dur: 8, delay: 0.6 },
+  { top: "17%", left: "48%", s: 15, dur: 7.5, delay: 1.1 },
+];
+
+export function DaySky({ className = "" }: { className?: string }) {
+  return (
+    <div
+      className={`pointer-events-none absolute inset-0 overflow-hidden ${className}`}
+      aria-hidden="true"
+    >
+      {/* noon sun glow */}
+      <div className="day-rays" />
+
+      {/* rising morning sun */}
+      <div className="absolute right-[7%] top-[3%] sm:right-[11%]">
+        <div className="absolute inset-0 -z-10 scale-[2.3] rounded-full bg-[radial-gradient(circle,rgba(255,233,150,0.95),transparent_62%)] blur-md" />
+        <Clay3D name="sun" size={92} className="animate-spin-slow" />
+      </div>
+
+      {/* drifting clouds */}
+      {CLOUDS.map((c, i) => (
+        <div
+          key={i}
+          className="absolute"
+          style={{ top: c.top, left: c.left, transform: `scale(${c.scale})`, opacity: c.op }}
+        >
+          <div
+            className="animate-cloud"
+            style={
+              {
+                "--cloud-dur": `${c.dur}s`,
+                "--cloud-bg": c.bg,
+                animationDelay: `${c.delay}s`,
+              } as CSSProperties
+            }
+          >
+            <span className="cloud" />
+          </div>
+        </div>
+      ))}
+
+      {/* a little morning flock */}
+      {BIRDS.map((b, i) => (
+        <div
+          key={i}
+          className="animate-fly absolute"
+          style={
+            { top: b.top, left: b.left, "--fly-dur": `${b.dur}s`, animationDelay: `${b.delay}s` } as CSSProperties
+          }
+        >
+          <svg width={b.s} height={b.s / 2} viewBox="0 0 24 12" fill="none">
+            <path
+              d="M1 8 Q6 1 11 7 Q17 1 23 8"
+              stroke="#6c6790"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+        </div>
+      ))}
+    </div>
+  );
+}
+
 /** A planet with a moon orbiting around it. */
 export function Orbit({
   size = 120,

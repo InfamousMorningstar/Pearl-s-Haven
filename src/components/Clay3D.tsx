@@ -26,7 +26,14 @@ export type Clay3DName =
   | "trex"
   | "egg"
   | "footprint"
-  | "volcano";
+  | "volcano"
+  | "clock"
+  | "pin"
+  | "envelope"
+  | "phone"
+  | "chat"
+  | "hero-man"
+  | "hero-woman";
 
 type Clay3DProps = {
   name: Clay3DName;

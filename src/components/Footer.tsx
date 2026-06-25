@@ -33,6 +33,20 @@ export default function Footer() {
             © {new Date().getFullYear()} Pearl&apos;s Haven Dayhome · 150 Costa Mesa
             Close NE · 587-917-0079 · Fully licensed home childcare
           </p>
+
+          <div className="mt-6 flex justify-center">
+            <a
+              href="https://portfolio.ahmxd.net"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="squish group inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-5 py-2.5 backdrop-blur-sm transition-colors hover:border-white/25"
+            >
+              <Clay3D name="sparkles" size={26} className="animate-twinkle" />
+              <span className="spotlight-text font-display text-lg tracking-tight">
+                Designed &amp; Engineered by Salman Ahmad
+              </span>
+            </a>
+          </div>
         </Reveal>
       </div>
     </footer>
