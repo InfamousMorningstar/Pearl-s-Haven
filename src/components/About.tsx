@@ -1,3 +1,7 @@
+"use client";
+
+import Image from "next/image";
+import { motion, useReducedMotion } from "framer-motion";
 import Clay3D from "./Clay3D";
 import Wave from "./Wave";
 import Bubbles from "./Bubbles";
@@ -30,7 +34,15 @@ const REASONS = [
   },
 ];
 
+const SNAP_PHOTOS = [
+  { src: "/Images/IMG_4119.jpg", border: "#FF6B6B", tilt: -4, delay: 0 },
+  { src: "/Images/IMG_4124.jpg", border: "#4D96FF", tilt: 2, delay: 0.08 },
+  { src: "/Images/IMG_4131.jpg", border: "#6BCB77", tilt: -2.5, delay: 0.16 },
+];
+
 export default function About() {
+  const reduce = useReducedMotion();
+
   return (
     <>
       <Wave fill="#FFFFFF" />
@@ -87,6 +99,41 @@ export default function About() {
                     ),
                   )}
                 </div>
+              </div>
+              {/* Snap photo strip below the bio card */}
+              <div className="mt-5 flex gap-3 justify-center" style={{ isolation: "isolate" }}>
+                {SNAP_PHOTOS.map((p) => (
+                  <motion.div
+                    key={p.src}
+                    className="group cursor-pointer"
+                    style={{ position: "relative", zIndex: 1 }}
+                    initial={reduce ? false : { opacity: 0, y: 20, rotate: p.tilt, scale: 0.85 }}
+                    whileInView={{ opacity: 1, y: 0, rotate: p.tilt, scale: 1 }}
+                    whileHover={{
+                      rotate: 0,
+                      scale: 1.12,
+                      zIndex: 20,
+                      transition: { type: "spring", stiffness: 300, damping: 15 },
+                    }}
+                    viewport={{ once: true, amount: 0.2 }}
+                    transition={{ type: "spring", stiffness: 150, damping: 12, delay: p.delay }}
+                  >
+                    <div
+                      className="overflow-hidden rounded-[16px] bg-white p-2 shadow-[0_8px_24px_-8px_rgba(58,52,80,0.3)]"
+                      style={{ border: `4px solid ${p.border}` }}
+                    >
+                      <div className="relative h-28 w-28 sm:h-32 sm:w-32 overflow-hidden rounded-[8px]">
+                        <Image
+                          src={p.src}
+                          alt="A happy moment at Pearl's Haven"
+                          fill
+                          className="object-cover transition-transform duration-500 group-hover:scale-105"
+                          sizes="140px"
+                        />
+                      </div>
+                    </div>
+                  </motion.div>
+                ))}
               </div>
             </Reveal>
 

@@ -2,6 +2,7 @@ import Nav from "@/components/Nav";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
 import LearnLove from "@/components/LearnLove";
+import PhotoGallery from "@/components/PhotoGallery";
 import Programs from "@/components/Programs";
 import DailyDay from "@/components/DailyDay";
 import Enroll from "@/components/Enroll";
@@ -23,6 +24,7 @@ export default function Home() {
         <Hero />
         <About />
         <LearnLove />
+        <PhotoGallery />
         <Programs />
         <DailyDay />
         <Enroll />
